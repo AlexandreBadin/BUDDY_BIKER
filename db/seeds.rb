@@ -33,6 +33,18 @@ puts 'Creating 4 fake users...'
       price: rand(20..150),
       user: User.all.sample
       )
+
+    # creer 3 bikers:
+
+    # biker = Biker.new(
+    #   pseudo: Faker::Superhero.name,
+    #   address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    #   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    #   date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
+    #   price: rand(20..150),
+    #   user: User.all.sample,
+    # biker.photo.attach(io: File.open('app/assets/images/nom_de_la_photo.jpg'), filename: ‘nom_de_la_photo.jpg', content_type: 'image/jpg')
+    #   )
     biker.save!
   end
 end
