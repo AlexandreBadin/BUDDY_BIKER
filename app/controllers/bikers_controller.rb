@@ -1,7 +1,15 @@
 class BikersController < ApplicationController
 
+  # def index
+  #   @bikers = Biker.all
+  # end
+
   def index
-    @bikers = Biker.all
+    if params[:biker].present?
+      @bikers = Biker.search()
+    else
+      @bikers = Biker.all
+    end
   end
 
   def show
