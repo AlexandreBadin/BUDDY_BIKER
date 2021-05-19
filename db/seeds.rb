@@ -24,29 +24,54 @@ puts 'Creating 4 fake users...'
 
   user.save!
 
-  rand(1..3).times do
+  # rand(1..3).times do
+  #   biker = Biker.new(
+  #     pseudo: Faker::Superhero.name,
+  #     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+  #     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  #     date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
+  #     price: rand(20..150),
+  #     user: User.all.sample
+  #     )
+
+    # creer 3 bikers:
+
     biker = Biker.new(
-      pseudo: Faker::Superhero.name,
-      address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+      pseudo: "Storm",
+      address: "108 Rue Abbé de l'Épée, 33000 Bordeaux, France",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
       price: rand(20..150),
       user: User.all.sample
-      )
+    )
+    biker.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(1).jpg')), filename: "image(1).jpg", content_type: "image/jpg")
 
-    # creer 3 bikers:
-
-    # biker = Biker.new(
-    #   pseudo: Faker::Superhero.name,
-    #   address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    #   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    #   date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
-    #   price: rand(20..150),
-    #   user: User.all.sample,
-    # biker.photo.attach(io: File.open('app/assets/images/nom_de_la_photo.jpg'), filename: ‘nom_de_la_photo.jpg', content_type: 'image/jpg')
-    #   )
     biker.save!
-  end
+
+    biker2 = Biker.new(
+      pseudo: "Daredevil",
+      address: "22 Cours du Maréchal Foch, 33000 Bordeaux, France",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
+      price: rand(20..150),
+      user: User.all.sample
+    )
+    biker2.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(2).jpg')), filename: "image(1).jpg", content_type: "image/jpg")
+
+    biker2.save!
+
+     biker3 = Biker.new(
+      pseudo: "Daredevil",
+      address: "2-5 Place de la Comédie, 33000 Bordeaux, France",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
+      price: rand(20..150),
+      user: User.all.sample
+    )
+    biker3.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(3).jpg')), filename: "image(1).jpg", content_type: "image/jpg")
+
+    biker3.save!
+
 end
 
 puts 'Finished!'
