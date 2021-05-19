@@ -1,0 +1,14 @@
+<h1>Select Your Bikers</h1>
+
+<div class="container">
+  <div class="row">
+    <ul>
+    <% @bikers.each do |biker| %>
+    <%= cl_image_tag @biker.photo.key, height: 300, width: 400, crop: :fill %>
+       <li><%= biker.pseudo %>
+        <%= biker.address %>
+        <%= biker.price %>€/jour</li>
+    <% end %>
+    </ul>
+  </div>
+</div>
