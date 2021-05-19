@@ -1,14 +1,31 @@
-<h1>Select Your Bikers</h1>
-
 <div class="container">
-  <div class="row">
-    <ul>
-    <% @bikers.each do |biker| %>
-       <li><%= biker.pseudo %>
-        <%= biker.address %>
-        <%= biker.price %>€/jour</li>
-    <% end %>
-    </ul>
-    <%= link_to 'Retour', root_path, class: 'btn btn-flat' %>
-  </div>
+  <h1>Select Your Bikers</h1>
+
+  <div class="container">
+    <!-- <div class="row">
+      <ul>
+      <% @bikers.each do |biker| %>
+        <li><%= biker.pseudo %>
+          <%= biker.address %>
+          <%= biker.price %>€/jour</li>
+      
+      </ul>
+      <%= link_to 'Retour', root_path, class: 'btn btn-flat' %>
+    </div> -->  
+
+
+          <div class="notification">
+            <img src='https://res.cloudinary.com/danpaqzgt/image/upload/v1621346378/bikers/images_6_cguxav.jpg' class="avatar-large" />
+            <div class="notification-content">
+              <p><small><%= biker.pseudo %></small></p>
+              <p><%= biker.address %>, <strong><%= biker.price %>€/day</strong></p>
+            </div>
+
+            <div class="notification-actions">
+              <%= link_to 'Reserver', biker_path(biker), class: "btn btn-success" %>
+              <%= link_to 'See more', biker_path(biker), class: "btn btn-info" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
 </div>
