@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- BANNER -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path 'banner.jpg' %>');">
+  <div class="container">
+    <h1>Hey, Welcome on <strong>Buddy Biker</strong> App!</h1>
+    <p>With us, make a cross on harassment, rent a Biker!</p>
+    
+    
+      <%= form_tag bikers_path, method: :get do %>
+        <div class="search-address">
+          <%= text_field_tag :address,
+            params[:address],
+            class: "form-control",
+            placeholder: "Enter address here"
+          %>
+          <%= submit_tag "Search Bikers", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+  </div>
+</div>
+  
+<div class="container">
+  <h2>Who we are ?</h2>
+  <p>Buddy Biker is an application for finding angry bikers used to rent bikers for a day.</p>
+
+  <p>The main goal of our Bikers is to intimidate the stalkers of children or adults at school or at work.</p>
+
+  <p>With his charisma, no one will give you any more problems...</p>
+
+  <hr>
+  
+  <p><strong>Think protection, think Buddy Biker!</strong></p>
+</div>
