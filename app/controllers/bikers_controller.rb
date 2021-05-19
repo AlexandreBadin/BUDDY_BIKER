@@ -6,7 +6,7 @@ class BikersController < ApplicationController
 
   def index
     if params[:biker].present?
-      @bikers = Biker.search()
+      @bikers = Biker.near(params[:address], 5)
     else
       @bikers = Biker.all
     end
