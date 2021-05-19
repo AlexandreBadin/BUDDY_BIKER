@@ -3,6 +3,7 @@
   background: white;
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,4 +16,8 @@
 
 .navbar-nav {
   align-items: center;
+}
+
+.nav-item {
+  margin-right: 8px;
 }

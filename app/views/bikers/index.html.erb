@@ -1,17 +1,22 @@
-<div class="container">
-  <h1>Select Your Bikers</h1>
-  <% @bikers.each do |biker| %>
-    <div class="notification">
-      <img src='https://res.cloudinary.com/danpaqzgt/image/upload/v1621346378/bikers/images_6_cguxav.jpg' class="avatar-large" />
-      <div class="notification-content">
-        <p><small><%= biker.pseudo %></small></p>
-        <p><%= biker.address %>, <strong><%= biker.price %>€/day</strong></p>
-      </div>
 
-      <div class="notification-actions">
-        <%= link_to 'Reserver', biker_path(biker), class: "btn btn-success" %>
-        <%= link_to 'See more', biker_path(biker), class: "btn btn-info" %>
+<div class="cards-bikers-container">
+  <div class="cards-bikers">
+    <% @bikers.each do |biker| %>
+      <div class="card-biker">
+        <img src='https://res.cloudinary.com/danpaqzgt/image/upload/v1621346378/bikers/images_6_cguxav.jpg' class="avatar-large" />
+        <div class="card-biker-info">
+          <h2><%= biker.pseudo %></h2>
+          <p><%= biker.address %></p>
+          <div class="card-biker-info-bottom">
+            <p><strong><%= biker.price %>€</strong></p>
+            <%= link_to 'See more', biker_path(biker) %>
+          </div>
+
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="map">
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWxleGJhZCIsImEiOiJja280OTRtdXgwenAzMnZzNXRyN2w1OHhqIn0.15FTycYgx6V6LbJJM6j9yA'>
+  </div>
 </div>
