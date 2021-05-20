@@ -1,10 +1,4 @@
 class BookingsController < ApplicationController
-  def new
-   @biker = Biker.find(params[:biker_id])
-   @booking = Booking.new
-
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @biker = Biker.find(params[:biker_id])
