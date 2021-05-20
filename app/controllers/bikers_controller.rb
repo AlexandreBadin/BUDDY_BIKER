@@ -53,6 +53,6 @@ class BikersController < ApplicationController
   private
 
   def params_biker
-    params.require(:biker).permit(:pseudo, :address, :price, :description, :date)
+    params.require(:biker).permit(:pseudo, :address, :price, :description, :date, :photo)
   end
 end

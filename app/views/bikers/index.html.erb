@@ -3,7 +3,7 @@
   <div class="cards-bikers">
     <% @bikers.each do |biker| %>
       <div class="card-biker">
-          <%= cl_image_tag biker.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag biker.photo.try(:key), height: 300, width: 400, crop: :fill %>
           <h2><%= biker.pseudo %></h2>
           <p><%= biker.address %></p>
           <div class="card-biker-info-bottom">
