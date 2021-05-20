@@ -3,8 +3,7 @@
   <div class="cards-bikers">
     <% @bikers.each do |biker| %>
       <div class="card-biker">
-        <img src='https://res.cloudinary.com/danpaqzgt/image/upload/v1621346378/bikers/images_6_cguxav.jpg' class="avatar-large" />
-        <div class="card-biker-info">
+          <%= cl_image_tag biker.photo.key, height: 300, width: 400, crop: :fill %>
           <h2><%= biker.pseudo %></h2>
           <p><%= biker.address %></p>
           <div class="card-biker-info-bottom">
@@ -20,3 +19,4 @@
   <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWxleGJhZCIsImEiOiJja280OTRtdXgwenAzMnZzNXRyN2w1OHhqIn0.15FTycYgx6V6LbJJM6j9yA'>
   </div>
 </div>
+
