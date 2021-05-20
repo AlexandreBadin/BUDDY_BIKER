@@ -1,7 +1,7 @@
-.form-login, .form-signup {
+.form-login, .form-signup, .form-booking, .create-biker-form {
     background: white;
     padding: 10px 20px;
-    margin: 50px 0;
+    margin: 50px auto;
     border-radius: 3px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     h2 {
@@ -15,3 +15,7 @@
       margin-bottom: 20px
     }
   }
+
+.create-biker-form {
+  width: 50%;
+}
