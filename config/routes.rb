@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :bikers, only: [:index, :show, :new, :create] do
+  resources :bikers, only: [:index, :show, :new, :create, :edit, :update] do
     resources :bookings, only: [:create]
   end
   resources :bookings, only: :index
-
+  resources :bikers, only: :destroy
   get 'users/dashboard', to: 'users#dashboard', as: :users_dashboard
 end
