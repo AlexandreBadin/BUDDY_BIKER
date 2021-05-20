@@ -6,30 +6,26 @@
 </div>
 
 <div class="container">
-
-  <div class="cards">
-    <div class="card-biker">
-      <div class="card-description">
-          <p> <%= @biker.description %> </p>
-          <p> <%= @biker.date %> </p>
-          <p> <%= @biker.price %>€ </p>
-          <p> <%= @biker.address %> </p>
-      </div>
-      
-      <div class="card-map">
-        <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWxleGJhZCIsImEiOiJja280OTRtdXgwenAzMnZzNXRyN2w1OHhqIn0.15FTycYgx6V6LbJJM6j9yA'>
+  <div class="card-biker">
+    <div class="card-description">
+      <div class="description">
+        <h2> <i class="fas fa-bomb"></i>  Biker Power </i> </h2>
+        <p> <%= @biker.description %> </p>
+        <p> <i class="far fa-calendar-alt"></i> Available: <%= @biker.date %> </p>
+        <div class="price">
+        <p> Price: <%= @biker.price %>€ </p>
+        </div>
       </div>
     </div>
 
-    <div class='card-calendar'>
-    </div>
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWxleGJhZCIsImEiOiJja280OTRtdXgwenAzMnZzNXRyN2w1OHhqIn0.15FTycYgx6V6LbJJM6j9yA'>
+    
+  </div>
 
-    <div class="form-booking">
-      <%= simple_form_for ([@biker, @booking]) do |f| %>
-        <p><%= f.input :date, label: 'Date arrivée' %></p>
-        <p><%= f.input :date, label: 'Date départ' %></p>
-        <p><%= f.submit "Book", class: "btn btn-primary" %></p>
-      <% end %>
-    </div>
+  <div class="form-booking">
+    <%= simple_form_for ([@biker, @booking]) do |f| %>
+      <p><%= f.input :date, label: 'Prestation date' %></p>
+      <p><%= f.submit "Book", class: "btn btn-primary" %></p>
+    <% end %>
   </div>
 </div>
