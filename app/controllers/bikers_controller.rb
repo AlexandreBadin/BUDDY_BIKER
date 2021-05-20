@@ -27,6 +27,22 @@ class BikersController < ApplicationController
     end
   end
 
+  def edit
+    @biker = Biker.find(params[:id])
+  end
+
+  def update
+    @biker = Biker.find(params[:id])
+    @biker.update(params_biker)
+    redirect_to users_dashboard_path
+  end
+
+  def destroy
+    @biker = Biker.find(params[:id])
+    @biker.destroy
+    redirect_to users_dashboard_path
+  end
+
   private
 
   def params_biker

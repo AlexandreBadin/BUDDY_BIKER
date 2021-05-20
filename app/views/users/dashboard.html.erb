@@ -13,11 +13,11 @@
 
         <div class="notification-actions">
 
-          <%= link_to 'Edit' do %>
+          <%= link_to edit_biker_path(biker) do %>
             <i class="fas fa-pencil-alt"></i>
           <% end %>
 
-          <%= link_to 'Delete', method: :delete, data: { confirm: "You will destroy #{biker.pseudo.upcase}, Are you sure about that?" } do %>
+          <%= link_to biker_path(biker), method: :delete, data: { confirm: "You will destroy #{biker.pseudo.upcase}, Are you sure about that?" } do %>
             <i class="far fa-trash-alt"></i></a>
           <% end %>
 
