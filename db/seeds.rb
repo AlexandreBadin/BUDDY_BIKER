@@ -13,8 +13,8 @@ puts 'destruction en cours...'
 
 puts 'done'
 
-puts 'Creating 4 fake users...'
-4.times do
+puts 'Creating a fake user...'
+#4.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -56,23 +56,23 @@ puts 'Creating 4 fake users...'
       price: rand(20..150),
       user: User.all.sample
     )
-    biker2.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(2).jpg')), filename: "image(1).jpg", content_type: "image/jpg")
+    biker2.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(2).jpg')), filename: "image(2).jpg", content_type: "image/jpg")
 
     biker2.save!
 
      biker3 = Biker.new(
-      pseudo: "Daredevil",
+      pseudo: "Flash",
       address: "2-5 Place de la Comédie, 33000 Bordeaux, France",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: Faker::Date.between(from: Date.today, to: '2022-09-25'),
       price: rand(20..150),
       user: User.all.sample
     )
-    biker3.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(3).jpg')), filename: "image(1).jpg", content_type: "image/jpg")
+    biker3.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(3).jpg')), filename: "image(3).jpg", content_type: "image/jpg")
 
     biker3.save!
 
-end
+#end
 
 puts 'Finished!'
 
