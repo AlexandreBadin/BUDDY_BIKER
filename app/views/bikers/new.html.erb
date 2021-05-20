@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="create-biker-form">
+    <h2>Add your new Biker</h2>
+    <%= simple_form_for @biker do |f| %>
+      <%= f.input :pseudo %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :date %>
+      <%= f.input :price %>
+      <%= f.button :submit, class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
