@@ -1,0 +1,29 @@
+.numbar {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 16px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0 8px;
+    color: #979797;
+    font-weight: lighter;
+    font-size: 16px;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.numbar .active {
+  color: black;
+}
