@@ -1,0 +1,29 @@
+.card-description {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // position: absolute;
+  padding-top: 20px;
+}
+
+.card-biker {
+  margin-top: 10px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.price {
+  // position: relative;
+  // top: 80px;
+  text-align: right;
+  margin-top: 10px;
+}
+
+#map {
+  height: 350px;
+  margin: 10px;
+}
