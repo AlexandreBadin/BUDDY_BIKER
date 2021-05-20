@@ -22,7 +22,7 @@
         border-radius: 4px 0 0 4px;
         object-fit: cover;
         transition-duration: .4s;
-        
+
         &:hover {
             opacity: .7;
             transition-duration: .4s;
@@ -38,7 +38,7 @@
             letter-spacing: 1px;
             color: rgba(30, 30, 30, .8);
         }
-    
+
         p {
             font-size: 14px;
             color: #979797;
@@ -58,13 +58,13 @@
     }
 }
 
-.map {
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    margin: 16px 16px 16px 0;
+// .map {
+//     height: 100vh;
+//     position: sticky;
+//     top: 0;
+//     margin: 16px 16px 16px 0;
 
-    img {
-        border-radius: 4px;
-    }
-}
+//     img {
+//         border-radius: 4px;
+//     }
+// }
