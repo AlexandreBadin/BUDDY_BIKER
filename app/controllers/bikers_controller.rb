@@ -18,6 +18,7 @@ class BikersController < ApplicationController
   def show
     @biker = Biker.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
   end
 
   def new
