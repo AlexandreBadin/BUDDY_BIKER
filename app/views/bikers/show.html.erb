@@ -29,17 +29,23 @@
     <% end %>
   </div>
 
+
   <h3>Reviews</h3>
       <div id="review">
         <% if @biker.reviews.blank? %>
           Be the first to leave a review for <%= @biker.pseudo %>
+          
         <% else %>
           <% @biker.reviews.each do |review| %>
-              <% review.rating.times do %>
-              <i class="fas fa-star"></i>
-              <% end %>
-            <p id="review-<%= review.id %>"><%= review.content %></p>
-            <small class="text-right"><%= link_to "Delete", review, method: :delete, data: { confirm: "Are you sure you want to delete your review?"}, remote: true %></small>
+              <div class="notification">
+                <div class="notification-content">
+                  <p id="review-<%= review.id %>"><%= review.content %></p>
+                  <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                  <!-- <small class="text-right"><%= link_to "Delete", review, method: :delete, data: { confirm: "Are you sure you want to delete your review?"}, remote: true %></small> -->
+                </div>
+              </div>
           <% end %>
         <% end %>
       </div>
@@ -49,6 +55,7 @@
      <%= f.input :content, as: :text, label: "Add a review", placeholder: 'Tell us how your Biker did...' %>
      <%= f.input :rating, as: :select, collection: (1..5), required: true, label: "What's your rating" %>
      <%= f.submit class:'btn btn-primary' %>
+     <%= link_to 'Back to Biker list', bikers_path, class:'btn btn-primary' %>
     <% end %>
   </div>
 </div>
