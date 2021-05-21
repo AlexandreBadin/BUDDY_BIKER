@@ -1,31 +1,65 @@
+<!-- MY CURRENT BIKERS -->
 <div class="container">
-<!-- NOTIFICATIONS LIST -->
-  <div class="notifications-list">
-    <h1>My current Bikers</h1>
-    <% @bikers.each do |biker| %>
-      <!-- DISPLAY MY BIKERS CARD -->
-      <div class="notification">
-        <%= cl_image_tag biker.photo.try(:key), class: "avatar-large"%>
-        <div class="notification-content">
-          <p><small><%= biker.pseudo %></small></p>
-          <p><%= biker.address %></p>
-        </div>
+  <div class="notifications-container">
+    <!-- NOTIFICATIONS LIST -->
+    <div class="notifications-list">
+      <h1>My current Bikers</h1>
+      <% @bikers.each do |biker| %>
+        <!-- DISPLAY MY BIKERS CARD -->
+        <div class="notification">
+          <%= cl_image_tag biker.photo.try(:key), class: "avatar-large"%>
+          <div class="notification-content">
+            <p><small><%= biker.pseudo %></small></p>
+            <p><%= biker.address %></p>
+          </div>
 
-        <div class="notification-actions">
+          <div class="notification-actions">
 
-          <%= link_to edit_biker_path(biker) do %>
-            <i class="fas fa-pencil-alt"></i>
-          <% end %>
+            <%= link_to edit_biker_path(biker) do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
 
-          <%= link_to biker_path(biker), method: :delete, data: { confirm: "You will destroy #{biker.pseudo.upcase}, Are you sure about that?" } do %>
-            <i class="far fa-trash-alt"></i></a>
-          <% end %>
+            <%= link_to biker_path(biker), method: :delete, data: { confirm: "You will destroy #{biker.pseudo.upcase}, Are you sure about that?" } do %>
+              <i class="far fa-trash-alt"></i></a>
+            <% end %>
 
-        </div>
-      </div>      
-    <% end %>
-  <div class="btn-add">
-    <%= link_to 'Add a new Biker!', new_biker_path, class: 'btn btn-primary'%>
-  </div>
+          </div>
+        </div>      
+      <% end %>
+      <div class="btn-add">
+        <%= link_to 'Add a new Biker!', new_biker_path, class: 'btn btn-primary'%>
+      </div>
+    </div>
+
+    <!-- MY BOOKINGS -->
+    <!-- NOTIFICATIONS LIST -->
+    <div class="notifications-list">
+      <h1>My Bookings</h1>
+      <% @bikers.each do |biker| %>
+        <!-- DISPLAY MY BIKERS CARD -->
+        <div class="notification">
+          <%= cl_image_tag biker.photo.try(:key), class: "avatar-large"%>
+          <div class="notification-content">
+            <p><small><%= biker.pseudo %></small></p>
+            <p><%= biker.address %></p>
+          </div>
+
+          <div class="notification-actions">
+
+            <%= link_to edit_biker_path(biker) do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
+
+            <%= link_to biker_path(biker), method: :delete, data: { confirm: "You will destroy #{biker.pseudo.upcase}, Are you sure about that?" } do %>
+              <i class="far fa-trash-alt"></i></a>
+            <% end %>
+
+          </div>
+        </div>      
+      <% end %>
+      <div class="btn-add">
+        <%= link_to 'Back to Bikers list!', bikers_path, class: 'btn btn-primary'%>
+      </div>
+    </div>
   </div>
 </div>
