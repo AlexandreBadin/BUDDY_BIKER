@@ -1,5 +1,5 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/danpaqzgt/image/upload/v1621346378/bikers/images_6_cguxav.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @biker.photo.try(:key) %>);">
   <div class="container">
     <h1><%= @biker.pseudo %></h1>
   </div>
