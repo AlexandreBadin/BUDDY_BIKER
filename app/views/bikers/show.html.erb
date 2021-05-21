@@ -12,11 +12,11 @@
         <h2> <i class="fas fa-bomb"></i>  Biker Power </i> </h2>
         <p> <%= @biker.description %> </p>
         <p> <i class="far fa-calendar-alt"></i> Available: <%= @biker.date %> </p>
-        <div class="price">
-        <p> Price: <%= @biker.price %>€ </p>
-        </div>
-      </div>
+      <div class="price">
+       <p> Price: <%= @biker.price %>€ </p>
     </div>
+  </div>
+</div>
 
     <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWxleGJhZCIsImEiOiJja280OTRtdXgwenAzMnZzNXRyN2w1OHhqIn0.15FTycYgx6V6LbJJM6j9yA'>
 
@@ -29,11 +29,26 @@
     <% end %>
   </div>
 
+  <h3>Reviews</h3>
+      <div id="review">
+        <% if @biker.reviews.blank? %>
+          Be the first to leave a review for <%= @biker.pseudo %>
+        <% else %>
+          <% @biker.reviews.each do |review| %>
+              <% review.rating.times do %>
+              <i class="fas fa-bomb"></i>
+              <% end %>
+            <p id="review-<%= review.id %>"><%= review.content %></p>
+            <small class="text-right"><%= link_to "Delete", review, method: :delete, data: { confirm: "Are you sure you want to delete your review?"}, remote: true %></small>
+          <% end %>
+        <% end %>
+      </div>
+
   <div class="form-review">
-    <%= simple_form_for([ @biker, @review ]) do |f| %>
-    <%= f.input :content, as: :text, label: 'Add a review',placeholder: 'Tell us how you Biker did...' %>
-    <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
-    <%= f.submit class:'btn btn-primary' %>
+    <%= simple_form_for ([@biker, @review]) do |f| %>
+     <%= f.input :content, as: :text, label: "Add a review", placeholder: 'Tell us how your Biker did...' %>
+     <%= f.input :rating, as: :select, collection: (1..5), required: true, label: "What's your rating" %>
+     <%= f.submit class:'btn btn-primary' %>
     <% end %>
   </div>
 </div>
