@@ -6,6 +6,9 @@
         <%= cl_image_tag biker.photo.try(:key), crop: :fill %>
         <div class="card-biker-info">
           <h2><%= biker.pseudo %></h2>
+          <% if biker.reviews.average(:rating).to_f.round(1) != 0 %>
+          <p><i class="fas fa-bomb"></i> <%= biker.reviews.average(:rating).to_f.round(1) %></p>
+          <% end %>
           <p><%= biker.address %></p>
           <div class="card-biker-info-bottom">
             <p><strong><%= biker.price %>€</strong></p>
