@@ -44,7 +44,7 @@ puts 'Creating a fake user...'
       price: rand(20..150),
       user: User.all.sample
     )
-    biker.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(1).jpg')), filename: "image(1).jpg", content_type: "image/jpg")
+    biker.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(1).jpg')), filename: "image1.jpg", content_type: "image/jpg")
 
     biker.save!
 
@@ -56,7 +56,7 @@ puts 'Creating a fake user...'
       price: rand(20..150),
       user: User.all.sample
     )
-    biker2.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(2).jpg')), filename: "image(2).jpg", content_type: "image/jpg")
+    biker2.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(2).jpg')), filename: "image2.jpg", content_type: "image/jpg")
 
     biker2.save!
 
@@ -68,7 +68,7 @@ puts 'Creating a fake user...'
       price: rand(20..150),
       user: User.all.sample
     )
-    biker3.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(3).jpg')), filename: "image(3).jpg", content_type: "image/jpg")
+    biker3.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/images(3).jpg')), filename: "image3.jpg", content_type: "image/jpg")
 
     biker3.save!
 
