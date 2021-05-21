@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
     redirect_to biker_path(@review.biker, anchor: "review")
   end
 
-
   private
 
   def review_params

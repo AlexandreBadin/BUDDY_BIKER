@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module BUDDYBiker
   class Application < Rails::Application
+   
     config.generators do |generate|
       generate.assets false
       generate.helper false
