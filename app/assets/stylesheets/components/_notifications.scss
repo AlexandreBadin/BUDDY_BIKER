@@ -1,3 +1,11 @@
+.notifications-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: space-around;
+  height: 52vh;
+}
+
 .notification {
   display: flex;
   align-items: center;
@@ -6,7 +14,7 @@
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
   border-radius: 4px;
-  width: 70%;
+  width: 100%;
 }
 
 .notification .notification-content {
@@ -44,14 +52,12 @@
 }
 
 .notifications-list {
-  height: 68vh;
-  
   .btn-add{
     text-align: center;
     margin-bottom: 8px;
 
     .btn {
-      width: 70%;
+      width: 100%;
     }
   }
 
