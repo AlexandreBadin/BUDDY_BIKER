@@ -19,13 +19,21 @@
     </div>
 
     <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYWxleGJhZCIsImEiOiJja280OTRtdXgwenAzMnZzNXRyN2w1OHhqIn0.15FTycYgx6V6LbJJM6j9yA'>
-    
+
   </div>
 
   <div class="form-booking">
     <%= simple_form_for ([@biker, @booking]) do |f| %>
       <p><%= f.input :date, label: 'Prestation date' %></p>
       <p><%= f.submit "Book", class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
+
+  <div class="form-review">
+    <%= simple_form_for([ @biker, @review ]) do |f| %>
+    <%= f.input :content, as: :text, label: 'Add a review',placeholder: 'Tell us how you Biker did...' %>
+    <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
+    <%= f.submit class:'btn btn-primary' %>
     <% end %>
   </div>
 </div>
